@@ -1,0 +1,6 @@
+{
+    "name": "expreval",
+    "version": "3.5",
+    "description": "ExprEval is a powerful, high speed expression evaluation library, written in ANSI C.",
+    "homepage": "http://expreval.sourceforge.net/"
+}

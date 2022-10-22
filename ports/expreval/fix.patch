@@ -1,0 +1,17 @@
+diff --git a/func.cpp b/func.cpp
+index 8badd19..b7a60f8 100644
+--- a/func.cpp
++++ b/func.cpp
+@@ -4,10 +4,11 @@
+ //------------------------------------------------------------------------------
+ 
+ // Includes
++#define _USE_MATH_DEFINES
++#include <cmath>
+ #include <new>
+ #include <memory>
+ 
+-#include <cmath>
+ #include <cerrno>
+ #include <ctime>
+ 
