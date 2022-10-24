@@ -2,5 +2,15 @@
     "name": "expreval",
     "version": "3.5",
     "description": "ExprEval is a powerful, high speed expression evaluation library, written in ANSI C.",
-    "homepage": "http://expreval.sourceforge.net/"
+    "homepage": "http://expreval.sourceforge.net/",
+	"dependencies": [
+    {
+      "name": "vcpkg-cmake",
+      "host": true
+    },
+	{
+      "name": "vcpkg-cmake-config",
+      "host": true
+    }
+  ]
 }
