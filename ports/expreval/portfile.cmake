@@ -43,4 +43,4 @@ file(INSTALL ${CMAKE_CURRENT_LIST_DIR}/expreval-config.cmake DESTINATION ${CURRE
 vcpkg_cmake_config_fixup()
 
 # Handle copyright
-file(COPY ${CMAKE_CURRENT_LIST_DIR}/copyright DESTINATION ${CURRENT_PACKAGES_DIR}/share/expreval)
+vcpkg_install_copyright(FILE_LIST ${CMAKE_CURRENT_LIST_DIR}/copyright)
