@@ -1,0 +1,21 @@
+{
+    "name": "qttools",
+    "version": "1.0",
+    "description": "Various QT codes merge into a Dll for dynamic linking.",
+    "homepage": "https://github.com/AVSimulation/QtTools",
+	"dependencies": [
+	"qt5",
+	{
+      "name": "qt5-winextras",
+      "platform": "windows"
+    },
+    {
+      "name": "vcpkg-cmake",
+      "host": true
+    },
+	{
+      "name": "vcpkg-cmake-config",
+      "host": true
+    }
+  ]
+}
