@@ -20,8 +20,8 @@ vcpkg_cmake_configure(
 vcpkg_cmake_install()
 
 # Handle .cmake
-file(INSTALL ${CMAKE_CURRENT_LIST_DIR}/QtTools-config.cmake DESTINATION ${CURRENT_PACKAGES_DIR}/share/QtTools)
-file(INSTALL ${CMAKE_CURRENT_LIST_DIR}/QtTools-config.cmake DESTINATION ${CURRENT_PACKAGES_DIR}/debug/share/QtTools)
+file(INSTALL ${CMAKE_CURRENT_LIST_DIR}/QtTools-config.cmake DESTINATION ${CURRENT_PACKAGES_DIR}/share/avs-qttools)
+file(INSTALL ${CMAKE_CURRENT_LIST_DIR}/QtTools-config.cmake DESTINATION ${CURRENT_PACKAGES_DIR}/debug/share/avs-qttools)
 
 vcpkg_cmake_config_fixup()
 

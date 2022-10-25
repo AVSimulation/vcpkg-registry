@@ -2,6 +2,6 @@
     "default": {
         "expreval": { "baseline": "3.5", "port-version": 0 },
         "3dsftk":   { "baseline": "3.1.0", "port-version": 0 },
-		"qttools":  { "baseline": "1.0", "port-version": 0 }
+		"avs-qttools":  { "baseline": "1.0", "port-version": 0 }
     }
 }
