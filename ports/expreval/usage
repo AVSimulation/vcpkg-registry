@@ -1,0 +1,5 @@
+The package expreval provides CMake targets:
+
+    find_package(expreval CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE expreval::expreval)
+

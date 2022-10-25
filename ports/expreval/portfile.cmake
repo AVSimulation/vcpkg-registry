@@ -18,16 +18,8 @@ vcpkg_extract_source_archive_ex(
        fix.patch
 )
 
-# # Check if one or more features are a part of a package installation.
-# # See /docs/maintainers/vcpkg_check_features.md for more details
-# vcpkg_check_features(OUT_FEATURE_OPTIONS FEATURE_OPTIONS
-#   FEATURES # <- Keyword FEATURES is required because INVERTED_FEATURES are being used
-#     tbb   WITH_TBB
-#   INVERTED_FEATURES
-#     tbb   ROCKSDB_IGNORE_PACKAGE_TBB
-# )
-
 file(COPY ${CMAKE_CURRENT_LIST_DIR}/CMakeLists.txt DESTINATION ${SOURCE_PATH})
+file(COPY ${CMAKE_CURRENT_LIST_DIR}/cmake/exprevalConfig.cmake DESTINATION ${SOURCE_PATH}/cmake)
 
 vcpkg_cmake_configure(
     SOURCE_PATH ${SOURCE_PATH}
@@ -36,11 +28,8 @@ vcpkg_cmake_configure(
 
 vcpkg_cmake_install()
 
-# Handle .cmake
-file(INSTALL ${CMAKE_CURRENT_LIST_DIR}/expreval-config.cmake DESTINATION ${CURRENT_PACKAGES_DIR}/share/expreval)
-file(INSTALL ${CMAKE_CURRENT_LIST_DIR}/expreval-config.cmake DESTINATION ${CURRENT_PACKAGES_DIR}/debug/share/expreval)
-
 vcpkg_cmake_config_fixup()
 
 # Handle copyright
 vcpkg_install_copyright(FILE_LIST ${CMAKE_CURRENT_LIST_DIR}/copyright)
+file(INSTALL "${CMAKE_CURRENT_LIST_DIR}/usage" DESTINATION "${CURRENT_PACKAGES_DIR}/share/${PORT}")

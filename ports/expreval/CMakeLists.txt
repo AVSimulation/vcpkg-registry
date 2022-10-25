@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.0)
 
-project(expreval)
+project(expreval VERSION 3.5 LANGUAGES CXX)
 
 set(CMAKE_DEBUG_POSTFIX "d")
 
@@ -34,11 +34,36 @@ add_library(expreval
 	vallist.cpp
 )
 
+
+target_include_directories(expreval
+  PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/expreval>
+)
+
 install(TARGETS expreval
-        COMPONENT runtime
-        RUNTIME DESTINATION bin
-        ARCHIVE DESTINATION lib)
+  EXPORT expreval-export
+  LIBRARY DESTINATION lib
+  ARCHIVE DESTINATION lib
+)
+
+install(EXPORT expreval-export
+  FILE
+  	exprevalTargets.cmake
+  NAMESPACE
+  	expreval::
+  DESTINATION
+    share/expreval
+)
 
 if(NOT DISABLE_INSTALL_HEADERS)
 	install(FILES ${HEADERS} DESTINATION include/expreval)
 endif()
+
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/cmake/exprevalConfig.cmake DESTINATION "share/expreval")
+
+include(CMakePackageConfigHelpers)
+write_basic_package_version_file(${CMAKE_CURRENT_BUILD_DIR}/cmake/exprevalConfigVersion.cmake
+		VERSION ${PROJECT_VERSION}
+		COMPATIBILITY SameMajorVersion)
+install(FILES ${CMAKE_CURRENT_BUILD_DIR}/cmake/exprevalConfigVersion.cmake
+		DESTINATION "share/expreval")
