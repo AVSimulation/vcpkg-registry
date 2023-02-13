@@ -1,0 +1,7 @@
+set(VCPKG_TARGET_ARCHITECTURE x86)
+set(VCPKG_CRT_LINKAGE dynamic)
+set(VCPKG_LIBRARY_LINKAGE dynamic)
+
+# AVSimulation put prefix on all CMake build dll to avoid conflicts
+set(VCPKG_CMAKE_CONFIGURE_OPTIONS -DCMAKE_SHARED_LIBRARY_PREFIX_CXX="Ext." -DCMAKE_SHARED_LIBRARY_PREFIX_C="Ext.")
+
