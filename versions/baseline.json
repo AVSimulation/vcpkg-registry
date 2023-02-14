@@ -4,6 +4,6 @@
         "3dsftk":   { "baseline": "3.1.0", "port-version": 0 },
 		"avs-qttools":  { "baseline": "1.0", "port-version": 0 },
 		"pcre2":   { "baseline": "10.40", "port-version": 2 },
-		"osg":   { "baseline": "3.6.5", "port-version": 18 }
+		"osg":   { "baseline": "3.6.5", "port-version": 19 }
     }
 }
