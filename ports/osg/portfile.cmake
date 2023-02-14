@@ -1,5 +1,8 @@
 set(OSG_VER 3.6.5)
 
+# Do not use Ext. for OSG (build problem)
+set(VCPKG_CMAKE_CONFIGURE_OPTIONS "")
+
 vcpkg_from_github(
 	OUT_SOURCE_PATH SOURCE_PATH
 	REPO AVSimulation/OpenSceneGraph
